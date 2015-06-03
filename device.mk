@@ -236,6 +236,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.sib16_support=1 \
     persist.radio.alt_mbn_name=tmo_alt.mbn
 
+# never dexopt the MotoSignature
+$(call add-product-dex-preopt-module-config,MotoSignatureApp,disable)
+
 #Reduce IMS logging
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.ims.disableDebugLogs=1 \
