@@ -255,7 +255,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.fsg_reload_on=1 \
     persist.radio.mcfg_enabled=1
 
+# Superuser access
+SUPERUSER_EMBEDDED := true
+
+PRODUCT_PACKAGES += \
+    Superuser \
+    su
+
+# Additional packages
+PRODUCT_PACKAGES += \
+    AudioFX
+
 PRODUCT_PROPERTY_OVERRIDES += \
+    ro.adb.secure=1 \
     ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
     ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
     ro.error.receiver.system.apps=com.google.android.feedback \
