@@ -35,6 +35,7 @@
 #include <hardware/hardware.h>
 #include <hardware/power.h>
 
+#define WAKE_GESTURE_PATH "/sys/bus/i2c/devices/1-004a/tsp"
 #define STATE_ON "state=1"
 #define STATE_OFF "state=0"
 #define STATE_HDR_ON "state=2"
@@ -56,6 +57,42 @@ static void socket_init()
         memset(&client_addr, 0, sizeof(struct sockaddr_un));
         client_addr.sun_family = AF_UNIX;
         snprintf(client_addr.sun_path, UNIX_PATH_MAX, BOOST_SOCKET);
+    }
+}
+
+static int sysfs_write(const char *path, char *s)
+{
+    char buf[80];
+    int len;
+    int fd = open(path, O_WRONLY);
+
+    if (fd < 0) {
+        strerror_r(errno, buf, sizeof(buf));
+        ALOGE("Error opening %s: %s\n", path, buf);
+        return -1;
+    }
+
+    len = write(fd, s, strlen(s));
+    if (len < 0) {
+        strerror_r(errno, buf, sizeof(buf));
+        ALOGE("Error writing to %s: %s\n", path, buf);
+        close(fd);
+        return -1;
+    }
+
+    close(fd);
+    return 0;
+}
+
+static void set_feature(struct power_module *module, feature_t feature, int state)
+{
+    switch (feature) {
+        case POWER_FEATURE_DOUBLE_TAP_TO_WAKE:
+            sysfs_write(WAKE_GESTURE_PATH, state ? "AUTO" : "OFF");
+            break;
+        default:
+            ALOGW("Error setting the feature, it doesn't exist %d\n", feature);
+            break;
     }
 }
 
@@ -270,6 +307,7 @@ struct power_module HAL_MODULE_INFO_SYM = {
     },
 
     .init = power_init,
+    .setFeature = set_feature,
     .setInteractive = power_set_interactive,
     .powerHint = power_hint,
 };
