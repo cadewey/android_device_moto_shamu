@@ -507,6 +507,7 @@
 		<ctl name="SLIM_1 SampleRate" value="48000" />
 		<ctl name="SLIM_1_TX Channels" value="One" />
 		<ctl name="Voice Stub Tx Mixer SLIM_1_TX" value="1" />
+		<ctl name="QUAT_MI2S_RX Port Mixer SLIM_1_TX" value="1" />
 		<ctl name="QUAT_MI2S_RX_Voice Mixer Voice Stub" value="1" />
 		<ctl name="Voice Stub Tx Mixer STUB_TX_HL" value="1" />
 		<ctl name="Voice Stub Tx Mixer STUB_1_TX_HL" value="1" />
@@ -519,6 +520,7 @@
 		<ctl name="SLIM_3_RX Channels" value="One" />
 		<ctl name="SLIMBUS_3_RX_Voice Mixer Voice Stub" value="1" />
 		<ctl name="Voice Stub Tx Mixer QUAT_MI2S_TX" value="1" />
+		<ctl name="SLIMBUS_3_RX Port Mixer QUAT_MI2S_TX" value="1" />
 	</path>
 
 	<path name="voice-call bt-sco">
@@ -527,8 +529,11 @@
 		<ctl name="SLIMBUS_1_RX Mixer Voice Stub" value="1" />
 		<ctl name="Voice Stub Tx Mixer SLIM_1_TX" value="1" />
 		<ctl name="AUX_PCM_RX_Voice Mixer Voice Stub" value="1" />
+		<ctl name="SLIMBUS_1_RX Port Mixer AUX_PCM_UL_TX" value="1" />
+		<ctl name="AUX_PCM_RX Port Mixer SLIM_1_TX" value="1" />
 		<ctl name="SLIM_3_RX Channels" value="One" />
 		<ctl name="SLIMBUS_3_RX_Voice Mixer Voice Stub" value="1" />
+		<ctl name="SLIMBUS_3_RX Port Mixer AUX_PCM_RX" value="1" />
 	</path>
 
 	<path name="voice-call bt-sco-wb">
@@ -608,6 +613,11 @@
 		<ctl name="SLIM_1_TX Channels" value="One" />
 		<ctl name="VoLTE Stub Tx Mixer SLIM_1_TX" value="1" />
 		<ctl name="QUAT_MI2S_RX_Voice Mixer VoLTE Stub" value="1" />
+		<ctl name="QUAT_MI2S_RX Port Mixer SLIM_1_TX" value="1" />
+		<ctl name="SLIM_3_RX Channels" value="One" />
+		<ctl name="SLIMBUS_3_RX_Voice Mixer VoLTE Stub" value="1" />
+		<ctl name="VoLTE Stub Tx Mixer QUAT_MI2S_TX" value="1" />
+		<ctl name="SLIMBUS_3_RX Port Mixer QUAT_MI2S_TX" value="1" />
 		<ctl name="VoLTE Stub Tx Mixer STUB_TX_HL" value="1" />
 		<ctl name="VoLTE Stub Tx Mixer STUB_1_TX_HL" value="1" />
 		<ctl name="BOOST_STUB Right Mixer right VoLTE_DL" value="1" />
