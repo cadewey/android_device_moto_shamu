@@ -18,7 +18,9 @@
 # $(call inherit-product, device/sample/products/backup_overlay.mk)
 
 # Get the long list of APNs
-PRODUCT_COPY_FILES := device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml
+PRODUCT_COPY_FILES := \
+	device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.xml \
+	device/sample/etc/apns-full-conf.xml:system/etc/old-apns-conf.xml
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
@@ -26,7 +28,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 PRODUCT_NAME := aosp_shamu
 PRODUCT_DEVICE := shamu
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := AOSP on Shamu
+PRODUCT_MODEL := Motorola Nexus 6
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_RESTRICT_VENDOR_FILES := true
 

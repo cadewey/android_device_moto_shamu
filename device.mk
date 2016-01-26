@@ -20,12 +20,7 @@
 # Everything in this directory will become public
 
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/moto/shamu-kernel/zImage-dtb
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
+LOCAL_KERNEL := device/moto/shamu-kernel/zImage-ee-dtb
 
 PRODUCT_COPY_FILES := \
     $(LOCAL_KERNEL):kernel
@@ -259,6 +254,18 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.fsg_reload_on=1 \
     persist.radio.mcfg_enabled=1
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
+    ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
+    ro.error.receiver.system.apps=com.google.android.feedback \
+    ro.com.google.locationfeatures=1 \
+    ro.setupwizard.enterprise_mode=1 \
+    ro.kernel.android.checkjni=0 \
+    persist.sys.root_access=3
+
+PRODUCT_COPY_FILES += \
+    device/moto/shamu/bootanimation.zip:system/media/bootanimation.zip
 
 # Camera configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \

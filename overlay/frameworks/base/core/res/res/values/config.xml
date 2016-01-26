@@ -351,4 +351,7 @@
 
     <!-- Declare wireless charging support -->
     <bool name="config_supportsWirelessCharging">true</bool>
+
+    <!-- Allow all rotations (includes reverse portrait) -->
+    <bool name="config_allowAllRotations">true</bool>
 </resources>
