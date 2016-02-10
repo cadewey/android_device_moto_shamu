@@ -19,12 +19,6 @@
 #
 # Everything in this directory will become public
 
-
-LOCAL_KERNEL := device/moto/shamu-kernel/zImage-dtb
-
-PRODUCT_COPY_FILES := \
-    $(LOCAL_KERNEL):kernel
-
 PRODUCT_COPY_FILES += \
     device/moto/shamu/init.shamu.rc:root/init.shamu.rc \
     device/moto/shamu/init.shamu.power.rc:root/init.shamu.power.rc \
