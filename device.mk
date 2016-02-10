@@ -270,6 +270,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.fsg_reload_on=1 \
     persist.radio.mcfg_enabled=1
 
+# Allow tethering without provisioning app
+PRODUCT_PROPERTY_OVERRIDES += \
+    net.tethering.noprovisioning=true
+
 # WiFi calling
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.iwlan.enable=true \
