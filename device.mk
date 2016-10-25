@@ -278,7 +278,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rcs.supported=0
 
 # Superuser access
-SUPERUSER_EMBEDDED := true
+#SUPERUSER_EMBEDDED := false
 
 PRODUCT_PACKAGES += \
     Superuser \
@@ -445,4 +445,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # OEM Unlock reporting
 ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.oem_unlock_supported=1
+    ro.oem_unlock_supported=1 \
+    ro.adb.secure=0
