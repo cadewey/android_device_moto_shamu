@@ -352,6 +352,8 @@
 
 	<path name="deep-buffer-playback speaker-and-headphones">
 		<ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia1" value="1" />
+		<ctl name="BOOST_STUB Right Mixer right MM_DL1" value="1" />
+		<ctl name="BOOST_STUB Left Mixer left MM_DL1" value="1" />
 		<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia1" value="1" />
 	</path>
 
@@ -401,6 +403,8 @@
 
 	<path name="low-latency-playback speaker-and-headphones">
 		<ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia5" value="1" />
+		<ctl name="BOOST_STUB Right Mixer right MM_DL5" value="1" />
+		<ctl name="BOOST_STUB Left Mixer left MM_DL5" value="1" />
 		<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia5" value="1" />
 	</path>
 
@@ -438,6 +442,8 @@
 
 	<path name="compress-offload-playback speaker-and-headphones">
 		<ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia4" value="1" />
+		<ctl name="BOOST_STUB Right Mixer right MM_DL4" value="1" />
+		<ctl name="BOOST_STUB Left Mixer left MM_DL4" value="1" />
 		<ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia4" value="1" />
 	</path>
 
@@ -620,8 +626,8 @@
 		<ctl name="SLIMBUS_3_RX Port Mixer QUAT_MI2S_TX" value="1" />
 		<ctl name="VoLTE Stub Tx Mixer STUB_TX_HL" value="1" />
 		<ctl name="VoLTE Stub Tx Mixer STUB_1_TX_HL" value="1" />
-		<ctl name="BOOST_STUB Right Mixer right VoLTE_DL" value="1" />
-		<ctl name="BOOST_STUB Left Mixer left VoLTE_DL" value="1" />
+		<ctl name="BOOST_STUB Right Mixer right VOLTE_STUB_DL" value="1" />
+		<ctl name="BOOST_STUB Left Mixer left VOLTE_STUB_DL" value="1" />
 	</path>
 
 	<path name="volte-call speaker">
@@ -948,9 +954,15 @@
 		<path name="handset-mic" />
 	</path>
 
-    <path name="unprocessed-mic">
-        <path name="unprocessed-handset-mic" />
-    </path>
+<path name="unprocessed-mic">
+    <path name="adc3" />
+    <ctl name="ADC1 Volume" value="0" />
+    <ctl name="ADC2 Volume" value="0" />
+    <ctl name="ADC3 Volume" value="3" />
+    <ctl name="ADC4 Volume" value="0" />
+    <ctl name="ADC5 Volume" value="0" />
+    <ctl name="ADC6 Volume" value="0" />
+</path>
 
 	<path name="camcorder-mic">
 		<path name="adc3" />
@@ -1089,4 +1101,13 @@
     <path name="voice-tx">
     </path>
 
+<path name="unprocessed-headset-mic">
+        <path name="headset-mic" />
+</path>
+
+<path name="unprocessed-stereo-mic">
+    <path name="speaker-dmic-endfire" />
+    <ctl name="ADC3 Volume" value="3" />
+    <ctl name="ADC4 Volume" value="3" />
+</path>
 </mixer>
