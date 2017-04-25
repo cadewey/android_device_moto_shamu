@@ -456,3 +456,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.oem_unlock_supported=1 \
     ro.adb.secure=0
+
+# ro.product.first_api_level indicates the first api level the device has commercially launched on.
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.product.first_api_level=21
