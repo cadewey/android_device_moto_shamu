@@ -292,8 +292,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #    su
 
 # Additional packages
-PRODUCT_PACKAGES += \
-    AudioFX
+#PRODUCT_PACKAGES += \
+#    AudioFX
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.adb.secure=1 \
