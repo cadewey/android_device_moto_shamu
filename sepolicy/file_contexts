@@ -181,9 +181,3 @@
 
 /dev/socket/cnd  u:object_r:cnd_socket:s0
 /system/bin/cnd  u:object_r:cnd_exec:s0
-
-#############
-# Superuser's control sockets
-/dev/com.thirdparty.superuser(/.*)?   u:object_r:superuser_device:s0
-/dev/com.android.settings(/*.)?   u:object_r:superuser_device:s0
-/dev/socket/su-daemon(/.*)?   u:object_r:superuser_device:s0
