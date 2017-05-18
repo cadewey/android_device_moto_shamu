@@ -27,8 +27,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 PRODUCT_NAME := aosp_shamu
 PRODUCT_DEVICE := shamu
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := Motorola Nexus 6
+PRODUCT_BRAND := google
+PRODUCT_MODEL := Nexus 6
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_RESTRICT_VENDOR_FILES := true
 
