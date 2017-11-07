@@ -146,4 +146,7 @@ TARGET_FS_CONFIG_GEN += device/moto/shamu/config.fs
 DEVICE_MANIFEST_FILE := device/moto/shamu/manifest.xml
 DEVICE_MATRIX_FILE := device/moto/shamu/compatibility_matrix.xml
 
+# Binder API version
+TARGET_USES_64_BIT_BINDER := true
+
 -include vendor/moto/shamu/BoardConfigVendor.mk
