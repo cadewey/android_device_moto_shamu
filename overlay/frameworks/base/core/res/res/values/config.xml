@@ -112,7 +112,7 @@
     <integer name="config_shutdownBatteryTemperature">680</integer>
 
     <!-- Default color for notification LED is white. -->
-    <color name="config_defaultNotificationColor">#ffffffff</color>
+    <color name="config_defaultNotificationColor">#ff0000ff</color>
 
     <!-- Default LED on time for notification LED in milliseconds. -->
     <integer name="config_defaultNotificationLedOn">1000</integer>
@@ -373,4 +373,21 @@
     <integer name="config_bluetooth_rx_cur_ma">17</integer>
     <integer name="config_bluetooth_tx_cur_ma">46</integer>
     <integer name="config_bluetooth_operating_voltage_mv">3500</integer>
+
+    <!-- Allow all rotations (includes reverse portrait) -->
+    <bool name="config_allowAllRotations">true</bool>
+
+    <!-- Default value for led color when battery is medium charged -->
+    <integer name="config_notificationsBatteryMediumARGB">0xFFFFFF00</integer>
+
+    <!-- Vibrator pattern to be used as the default for notifications
+         that do not specify vibration but vibrate anyway because the device
+         is in vibrate mode.
+     -->
+    <integer-array name="config_notificationFallbackVibePattern">
+        <item>0</item>
+        <item>350</item>
+        <item>250</item>
+        <item>350</item>
+    </integer-array>
 </resources>
