@@ -18,25 +18,6 @@
 # are also specific to shamu devices
 #
 # Everything in this directory will become public
-GAPPS_VARIANT := stock
-GAPPS_BYPASS_PACKAGE_OVERRIDES := WebViewGoogle
-GAPPS_EXCLUDED_PACKAGES := \
-    Books \
-    Drive \
-    Duo \
-    EditorsDocs \
-    EditorsSheets \
-    EditorsSlides \
-    FitnessPrebuilt \
-    Newsstand \
-    PlusOne \
-    PrebuiltKeep \
-    WebViewGoogle
-
-# Face Unlock is broken in 8.0+ because there's no 32-bit facenet lib
-GAPPS_EXCLUDED_PACKAGES += \
-    FaceLock
-
 PRODUCT_COPY_FILES += \
     device/moto/shamu/init.shamu.rc:root/init.shamu.rc \
     device/moto/shamu/init.shamu.power.rc:root/init.shamu.power.rc \
@@ -509,5 +490,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # ro.product.first_api_level indicates the first api level the device has commercially launched on.
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.first_api_level=21
-
-$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
